@@ -4,3 +4,10 @@
     text-shadow: black;
 
 }
+.navbar-brand{
+    font-family: 'Poiret One', cursive;
+    font-size: 40px;
+}
+#navbarr{
+    text-align: 100px;
+}
