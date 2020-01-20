@@ -2,8 +2,14 @@
     max-width: 100vw;
     height: 85vh;
     background-color: rgba(128, 128, 128, 0.185);
+    background-image: url(../../../cool-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: cover;
     padding-top: 30px;
     font-family: 'Poiret One', cursive;
+    text-shadow: black 2px,2px,2px;
 }
 .profile-image img{
 text-shadow: black 2px,2px,2px;
@@ -15,7 +21,7 @@ text-shadow: black 2px,2px,2px;
     font-family: 'Poiret One', cursive;
 }
 .headings{
-    color: purple;
+    color: burlywood;
     font-weight: bold;
     font-size: 24px;
     width: 500px;
@@ -38,4 +44,7 @@ a{
     transition: all 0.5s ease 0s;
     background-color: #e65e30e1;
     color:black;
+}
+#cardnew{
+    box-shadow: cornsilk 2px,2px,2px;
 }
