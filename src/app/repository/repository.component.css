@@ -1,5 +1,6 @@
 .repos{
     background-color: rgba(128, 128, 128, 0.185);
+    font-family: 'Poiret One', cursive;
 
 }
 a{
@@ -13,13 +14,16 @@ a{
     border-radius: 10px;
     display: inline-block;
     transition: all 0.5s ease 0s;
+    font-family: 'Poiret One', cursive;
 }
  a:hover{
     transition: all 0.5s ease 0s;
     background-color: #e65e30e1;
     color:black;
+    font-family: 'Poiret One', cursive;
 }
 .card{
     border-radius: 20px;
     border: 1px solid #3377bc;
+    font-family: 'Poiret One', cursive;
 }

@@ -5,9 +5,11 @@ form{
     border-radius: 5px;
     background: rgba(128, 128, 128, 0.219);
     border: 1px solid #3377bc;
+    font-family: 'Poiret One', cursive;
 }
 form label{
     font-size: 20px;
+    font-family: 'Poiret One', cursive;
 }
 .profile{
     max-width: 100vw;
@@ -22,11 +24,13 @@ form label{
     margin-top: 50px;
     line-height:20px;
     font-size: 20px;
+    font-family: 'Poiret One', cursive;
 }
 .headings{
     color: #3377bc;
     font-weight: bold;
     font-size: 24px;
+    font-family: 'Poiret One', cursive;
 }
 a{
     color: white;
@@ -39,11 +43,13 @@ a{
     border-radius: 10px;
     display: inline-block;
     transition: all 0.5s ease 0s;
+    font-family: 'Poiret One', cursive;
 }
  a:hover{
     transition: all 0.5s ease 0s;
     background-color: #e65e30e1;
     color:black;
+    font-family: 'Poiret One', cursive;
 }
 
 .repos{
@@ -60,13 +66,16 @@ a{
     border-radius: 10px;
     display: inline-block;
     transition: all 0.5s ease 0s;
+    font-family: 'Poiret One', cursive;
 }
  a:hover{
     transition: all 0.5s ease 0s;
     background-color: #e65e30e1;
     color:black;
+    font-family: 'Poiret One', cursive;
 }
 .card{
     border-radius: 20px;
     border: 1px solid #3377bc;
+    font-family: 'Poiret One', cursive;
 }
