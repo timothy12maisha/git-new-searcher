@@ -18,7 +18,7 @@ export class RepositoryComponent implements OnInit {
   ngOnInit() {
     this.githubService.personalDetailsRequest();
 
-    const apiUrl = `${environment.apiUrl}LennyDennis/repos${environment.apiKey}`;
+    const apiUrl = `${environment.apiUrl}timothy12maisha/repos${environment.apiKey}`;
     this.http.get(apiUrl).subscribe(response => {
       this.repos = response;
     });
