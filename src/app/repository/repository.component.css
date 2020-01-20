@@ -1,0 +1,25 @@
+.repos{
+    background-color: rgba(128, 128, 128, 0.185);
+
+}
+a{
+    color: white;
+    border: none;
+    margin-top: 10px;
+    padding: 6px 22px;
+    text-decoration: none;
+    font-size: 18px; 
+    background-color:#e65d30e1;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+}
+ a:hover{
+    transition: all 0.5s ease 0s;
+    background-color: #e65e30e1;
+    color:black;
+}
+.card{
+    border-radius: 20px;
+    border: 1px solid #3377bc;
+}
