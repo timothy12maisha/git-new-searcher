@@ -1,5 +1,5 @@
 <ng-progress></ng-progress>
-<div *ngIf='user.username'>
+<div *ngIf='user'>
 <div class="profile" >
     <div class="row">
       <div class="col-6 text-center profile-image">
@@ -8,10 +8,15 @@
       <div class="col-6 profile-text">
         <div class="card-body" id="cardnew">
           <p class="card-text"><span class="headings">Name:</span>{{user.name}}</p>
+          <br>
           <p class="card-text"><span class="headings">Username:</span>{{user.username}}</p>
+          <br>
           <p class="card-text"><span class="headings">Bio:</span>{{user.bio}}</p>
+          <br>
           <p class="card-text"><span class="headings">Followers:</span> {{ user.followers }}</p>
+          <br>
           <p class="card-text"><span class="headings">Following:</span> {{ user.following }}</p>
+          <br>
           <p class="card-text"><a [href]='user.githubUrl' >Visit Profile</a></p>
         </div>
       </div>

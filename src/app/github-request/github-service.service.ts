@@ -13,21 +13,22 @@ import { Repository } from '../repository';
 export class GithubServiceService {
   user: User;
   repos: Repository;
-
+  userName:string;
 
   constructor(private http: HttpClient) {
-    this.user = new User(0, '','','', '', 0, 0, '');
+    this.user = new User(0, '', '', '', '', 0, 0, '');
     this.repos = new Repository();
+    this.userName= 'timothy12maisha';
   }
 
   personalDetailsRequest() {
-    const apiUrl = `${environment.apiUrl}timothy12maisha${environment.apiKey}`;
+    const apiUrl = `${environment.apiUrl}${this.userName}${environment.apiKey}`;
 
     interface ApiResponse {
       id: number;
-      name:string;
+      name: string;
       login: string;
-      bio:string;
+      bio: string;
       avatar_url: string;
       followers: number;
       following: number;
@@ -36,24 +37,24 @@ export class GithubServiceService {
 
     const detailsPromise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(apiUrl).toPromise().then(
-      response => {
-        this.user.id = response.id;
-        this.user.name = response.name;
-        this.user.username = response.login;
-        this.user.bio = response.bio;
-        this.user.avatarUrl = response.avatar_url;
-        this.user.followers = response.followers;
-        this.user.following = response.following;
-        this.user.githubUrl = response.html_url;
+        response => {
+          this.user.id = response.id;
+          this.user.name = response.name;
+          this.user.username = response.login;
+          this.user.bio = response.bio;
+          this.user.avatarUrl = response.avatar_url;
+          this.user.followers = response.followers;
+          this.user.following = response.following;
+          this.user.githubUrl = response.html_url;
 
-        resolve();
-      },
-      error => {
-        // HANDLE BETTER
-        console.log('error');
+          resolve();
+        },
+        error => {
+          // HANDLE BETTER
+          console.log('error');
 
-        reject(error);
-      });
+          reject(error);
+        });
     });
     return detailsPromise;
   }
@@ -63,9 +64,9 @@ export class GithubServiceService {
 
     interface ApiResponse {
       id: number;
-      name:string;
+      name: string;
       login: string;
-      bio:string;
+      bio: string;
       avatar_url: string;
       followers: number;
       following: number;
@@ -74,29 +75,38 @@ export class GithubServiceService {
 
     const usersPromise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(userApiUrl).toPromise().then(
-      response => {
-        this.user.id = response.id;
-        this.user.name = response.name;
-        this.user.username = response.login;
-        this.user.bio = response.bio;
-        this.user.avatarUrl = response.avatar_url;
-        this.user.followers = response.followers;
-        this.user.following = response.following;
-        this.user.githubUrl = response.html_url;
+        response => {
+          this.user.id = response.id;
+          this.user.name = response.name;
+          this.user.username = response.login;
+          this.user.bio = response.bio;
+          this.user.avatarUrl = response.avatar_url;
+          this.user.followers = response.followers;
+          this.user.following = response.following;
+          this.user.githubUrl = response.html_url;
 
-        resolve();
-      },
-      error => {
+          resolve();
+        },
+        error => {
 
-        console.log('error');
+          console.log('error');
 
-        reject(error);
-      });
+          reject(error);
+        });
     });
     return usersPromise;
-    
-
+  }
+  findRepositories() {
+    let promise = new Promise((resolve, reject) => {
+      return this.http.get(`${environment.apiUrl}${this.userName}/repos${environment.apiKey}`).toPromise().then(reply => {
+        reply;
+        resolve(reply)
+      },
+        error => {
+          reject(error)
+        })
+    })
+    return promise
   }
 }
-
 

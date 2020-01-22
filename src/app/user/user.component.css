@@ -47,4 +47,10 @@ a{
 }
 #cardnew{
     box-shadow: cornsilk 2px,2px,2px;
+    font-size: 25px;
+    color: whitesmoke;
+
+}
+.card-body{
+color: white;
 }

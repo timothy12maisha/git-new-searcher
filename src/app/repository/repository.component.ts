@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { GithubServiceService } from '../github-request/github-service.service';
@@ -11,17 +11,47 @@ import { Repository } from '../repository';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  repos: Repository;
+  repos: any;
+  user:User;
+  userName:string;
 
-  constructor(private githubService: GithubServiceService, private http: HttpClient) {  }
+  @Input() reposList 
+  
 
-  ngOnInit() {
-    this.githubService.personalDetailsRequest();
+  constructor(private githubService: GithubServiceService, private http: HttpClient) { 
+    
+    // this.githubService.personalDetailsRequest();
 
-    const apiUrl = `${environment.apiUrl}timothy12maisha/repos${environment.apiKey}`;
+    const apiUrl = `${environment.apiUrl}${this.userName}/repos${environment.apiKey}`;
     this.http.get(apiUrl).subscribe(response => {
       this.repos = response;
+      console.log(response)
     });
+  }
+
+  findRepos(user) {
+    const apiReposUrl = `${environment.apiUrl}${user}/repos${environment.apiKey}`;
+    this.http.get(apiReposUrl).subscribe(response => {
+      this.repos = response;
+      console.log(this.repos);
+    });
+  }
+
+  ngOnInit() {
+    // this.githubService.personalDetailsRequest();
+
+    // const apiUrl = `${environment.apiUrl}${this.userName}/repos${environment.apiKey}`;
+    // this.http.get(apiUrl).subscribe(response => {
+    //   this.repos = response;
+    //   console.log(response)
+    // });
+
+    this.githubService.findRepositories().then(reply=>{
+      this.repos = reply;
+    });
+    
+    console.log(this.reposList)
+    
   }
 
 }

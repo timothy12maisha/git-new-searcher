@@ -9,10 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserComponent } from './user/user.component';
-import { SearchComponent } from './search/search.component';
 import { DateCountPipe } from './date-count.pipe';
 import { HighlightDirective } from './highlight.directive';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
@@ -20,10 +18,8 @@ import { RepositoryComponent } from './repository/repository.component';
     AppComponent,
     NavbarComponent,
     UserComponent,
-    SearchComponent,
     DateCountPipe,
     HighlightDirective,
-    NotFoundComponent,
     RepositoryComponent
   ],
   imports: [

@@ -11,3 +11,14 @@
 #navbarr{
     text-align: 100px;
 }
+#navbar22{
+    display: block !important;
+    /* text-align: center; */
+    margin-left: 40%;
+    align-items: center;
+}
+#newForm{
+    width: 200px;
+    text-align: center;
+    display: block;
+}
