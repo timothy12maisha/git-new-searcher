@@ -22,7 +22,33 @@
     </form>
   </div>
 </nav> -->
-
+<div class="profile" >
+  <form id="newForm" class="form-inline my-2 my-lg-0" #githubForm='ngForm'>
+    <input (keyup.enter)='findProfile()' type="text" class="form-control mr-sm-2" id=""
+      placeholder="         type username here.." [(ngModel)]='searchItem' name='searchItem'>
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="findProfile()" type="submit">Search</button>
+  </form>
+    <div class="row">
+      <div class="col-6 text-center profile-image">
+        <img [src]='user.avatarUrl' alt="landing-page-image">
+      </div>
+      <div class="col-6 profile-text">
+        <div class="card-body" id="cardnew">
+          <p class="card-text"><span class="headings">Name:</span>{{user.name}}</p>
+          <br>
+          <p class="card-text"><span class="headings">Username:</span>{{user.username}}</p>
+          <br>
+          <p class="card-text"><span class="headings">Bio:</span>{{user.bio}}</p>
+          <br>
+          <p class="card-text"><span class="headings">Followers:</span> {{ user.followers }}</p>
+          <br>
+          <p class="card-text"><span class="headings">Following:</span> {{ user.following }}</p>
+          <br>
+          <p class="card-text"><a [href]='user.githubUrl' >Visit Profile</a></p>
+        </div>
+      </div>
+    </div>
+</div>
 <div class="col-12 card" *ngFor='let oneRepo of repos'>
   <h1>Display Repos</h1>
   <div class="card-body">

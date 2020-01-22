@@ -1,7 +1,7 @@
 <ng-progress></ng-progress>
-<div *ngIf='user'>
-<div class="profile" >
-    <div class="row">
+<div >
+  <div class="profile">
+    <div class="row" *ngIf='user'>
       <div class="col-6 text-center profile-image">
         <img [src]='user.avatarUrl' alt="landing-page-image">
       </div>
@@ -17,9 +17,18 @@
           <br>
           <p class="card-text"><span class="headings">Following:</span> {{ user.following }}</p>
           <br>
-          <p class="card-text"><a [href]='user.githubUrl' >Visit Profile</a></p>
+          <p class="card-text"><a [href]='user.githubUrl'>Visit Profile</a></p>
         </div>
       </div>
     </div>
   </div>
-
+</div>
+<div class="col-12 card" >
+  <h1>Display Repos</h1>
+  <div class="card-body repos" *ngFor='let oneRepo of repos'>
+    <h5>{{oneRepo.name}}</h5>
+    <p class="card-text" style="color:black;"><strong>{{oneRepo.description}}</strong> </p>
+    <p class="card-text"><strong>Created {{ oneRepo.created_at | dateCount }} ago</strong> </p>
+    <a [href]='oneRepo.html_url'><strong>View repository</strong> </a>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { GithubServiceService } from '../github-request/github-service.service';
@@ -11,22 +11,16 @@ import { Repository } from '../repository';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  repos: any;
-  user:User;
-  userName:string;
+  user: User;
+  searchItem:string;
+  repos:Repository;
 
-  @Input() reposList 
-  
+  findProfile() {
+    // this.githubService.changeUser(this.searchItem);
+    this.githubService.getUsersProfiles(this.searchItem);
+    this.findRepos(this.searchItem);
 
-  constructor(private githubService: GithubServiceService, private http: HttpClient) { 
-    
-    // this.githubService.personalDetailsRequest();
-
-    const apiUrl = `${environment.apiUrl}${this.userName}/repos${environment.apiKey}`;
-    this.http.get(apiUrl).subscribe(response => {
-      this.repos = response;
-      console.log(response)
-    });
+    this.user = this.githubService.user;
   }
 
   findRepos(user) {
@@ -36,21 +30,22 @@ export class RepositoryComponent implements OnInit {
       console.log(this.repos);
     });
   }
+  
+
+  constructor(private githubService: GithubServiceService, private http: HttpClient) {
+    // this.githubService.personalDetailsRequest();
+  }
+
+
 
   ngOnInit() {
-    // this.githubService.personalDetailsRequest();
-
-    // const apiUrl = `${environment.apiUrl}${this.userName}/repos${environment.apiKey}`;
-    // this.http.get(apiUrl).subscribe(response => {
-    //   this.repos = response;
-    //   console.log(response)
-    // });
-
-    this.githubService.findRepositories().then(reply=>{
-      this.repos = reply;
-    });
     
-    console.log(this.reposList)
+      // const apiReposUrl = `${environment.apiUrl}timothy12maisha/repos${environment.apiKey}`;
+      // this.http.get(apiReposUrl).subscribe(response => {
+      //   this.repos = response;
+      //   console.log(this.repos);
+      // });
+    
     
   }
 

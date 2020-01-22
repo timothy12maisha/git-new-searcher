@@ -5,7 +5,7 @@ import { RepositoryComponent } from './repository/repository.component';
 
 const routes: Routes = [
   { path: 'home', component: UserComponent },
-  { path: 'repos', component: RepositoryComponent },
+  { path: 'search', component: RepositoryComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];

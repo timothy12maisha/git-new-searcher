@@ -14,15 +14,15 @@ export class GithubServiceService {
   user: User;
   repos: Repository;
   userName:string;
+  searchItem:string;
 
   constructor(private http: HttpClient) {
     this.user = new User(0, '', '', '', '', 0, 0, '');
     this.repos = new Repository();
-    this.userName= 'timothy12maisha';
   }
 
   personalDetailsRequest() {
-    const apiUrl = `${environment.apiUrl}${this.userName}${environment.apiKey}`;
+    const apiUrl = `${environment.apiUrl}timothy12maisha${environment.apiKey}`;
 
     interface ApiResponse {
       id: number;
@@ -96,9 +96,9 @@ export class GithubServiceService {
     });
     return usersPromise;
   }
-  findRepositories() {
+  findRepositories(user) {
     let promise = new Promise((resolve, reject) => {
-      return this.http.get(`${environment.apiUrl}${this.userName}/repos${environment.apiKey}`).toPromise().then(reply => {
+      return this.http.get(`${environment.apiUrl}${user}/repos${environment.apiKey}`).toPromise().then(reply => {
         reply;
         resolve(reply)
       },
@@ -107,6 +107,11 @@ export class GithubServiceService {
         })
     })
     return promise
+  }
+
+  changeUser(searchItem){
+    this.userName = searchItem; 
+
   }
 }
 
