@@ -23,11 +23,11 @@
     </div>
   </div>
 </div>
-<div class="col-12 card" >
-  <h1>Display Repos</h1>
-  <div class="card-body repos" *ngFor='let oneRepo of repos'>
-    <h5>{{oneRepo.name}}</h5>
-    <p class="card-text" style="color:black;"><strong>{{oneRepo.description}}</strong> </p>
+<div  id="insertion" class="col-12 card" >
+  <h1  style="font-size: 35px;" style="font-weight: bold;">Display Repos</h1>
+  <div style="font-size: 25px;" class="card-body repos" *ngFor='let oneRepo of repos'>
+    <h5 style="font-size: 30px;" >{{oneRepo.name}}</h5>
+    <p style="font-size: 100px;" class="card-text" style="color:black;"><strong>{{oneRepo.description}}</strong> </p>
     <p class="card-text"><strong>Created {{ oneRepo.created_at | dateCount }} ago</strong> </p>
     <a [href]='oneRepo.html_url'><strong>View repository</strong> </a>
   </div>

@@ -28,11 +28,11 @@ a{
     
     border: 1px solid #3377bc;
     font-family: 'Poiret One', cursive;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
 }
 .card-body{
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     color: black;
 }

@@ -17,7 +17,7 @@ text-shadow: black 2px,2px,2px;
 .profile-text{
     margin-top: 50px;
     line-height:20px;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'Poiret One', cursive;
 }
 .headings{
@@ -33,7 +33,7 @@ a{
     margin-top: 10px;
     padding: 6px 22px;
     text-decoration: none;
-    font-size: 18px; 
+    font-size: 30px; 
     background-color:#e65d30e1;
     border-radius: 10px;
     display: inline-block;
@@ -57,4 +57,13 @@ color: white;
 
 .repos{
     color:black;
+}
+#insertion{
+    background-image: url(../../../gradient2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poiret One', cursive;
+    text-shadow: black 2px,2px,2px;
+    font-weight: bold;
 }
